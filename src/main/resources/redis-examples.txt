@@ -1,0 +1,36 @@
+
+14-April-2020
+
+Cacheable link
+http://caseyscarborough.com/blog/2014/12/18/caching-data-in-spring-using-redis/
+
+>key *
+1) "\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x00\x00\x01ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x00"
+2) "tutorial-list"
+3) "name1"
+4) "list1"
+5) "user:1"
+6) "getAllEmployees~keys"
+7) "name2"
+
+>DEL name1
+
+_____________________________________________
+
+13-April-2020
+
+>redis-cli
+>ping
+>config get *
+>SET name "monika_yewale"
+>GET name
+
+
+Redis-cache List operations:
+>lpush tutorials data1
+>lpush tutorials data2
+>lpush tutorials data3
+>lrange tutorials 0 10
+
+Server installation on which machine windows/ubuntu. Steps are different
+Redis-cache not checking for redis-server whether it's on or off...

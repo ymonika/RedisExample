@@ -4,6 +4,7 @@ package com.example.redis.controller;
 import com.example.redis.entity.Employee;
 import com.example.redis.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,9 @@ public class EmployeeController {
     }
 
     @GetMapping
+    @Cacheable("getAllEmployees")
     public List<Employee> getAllEmployees() {
+        System.out.println("Calling getAllEmployees_____XXXXXXXXXXXXX_______");
         return employeeRepo.findAll();
     }
 

@@ -2,18 +2,20 @@ package com.example.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
 
-@SpringBootApplication
+@SpringBootApplication( exclude = { RedisAutoConfiguration.class, RedisRepositoriesAutoConfiguration.class} )
 public class Application {
 
     public static void main(String[] args) {
-       // SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class, args);
         System.out.println("______________Application Started________________");
 
-        Jedis jedis = new Jedis("localhost");
+      /*  Jedis jedis = new Jedis("localhost");
         System.out.println("Connection to server successfully");
 
         //store data in redis list
@@ -25,7 +27,7 @@ public class Application {
 
         for (int i = 0; i < list.size(); i++) {
             System.out.println("Stored string in redis:: " + list.get(i));
-        }
+        }*/
 
     }
 }
