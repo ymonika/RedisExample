@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-//@RedisHash("Employee")
 public class Employee implements Serializable {
 
     @Id
